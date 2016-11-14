@@ -16,10 +16,6 @@ img {
     visibility: hidden;
 }
 
-.imgWrapper {
-    position: relative;
-}
-
 .bbTile { 
     -webkit-transform: scale(0.9);
             transform: scale(0.9); 

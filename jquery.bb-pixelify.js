@@ -1,5 +1,5 @@
 /*!
- * BB Pixelify 1.0.0
+ * BB Pixelify 1.0.1
  * Transform single images into a grid of tiles.
  * https://github.com/bobbybol/pixelify
  * @license MIT licensed
@@ -60,10 +60,10 @@
             var tile = jQuery('<div/>', {
                 class: 'bbTile',
                 css: {
+                    position            : "absolute",
                     width               : tileWidth,
                     height              : tileHeight,
-                    backgroundImage     : imageSource,
-                    float               : "left"
+                    backgroundImage     : imageSource
                 }
             });
                         
@@ -72,20 +72,24 @@
             
             // Set the container to correct width and height
             container.css({
-                width: targetWidth,
-                height: targetHeight
+                position    : "relative",
+                width       : targetWidth,
+                height      : targetHeight
             });
             
             // Build grid of tiles
             for (i = 0; i < settings.rows; i++) {
                 for (j = 0; j < settings.columns; j++) {
-                    //console.log(i * tileWidth, j * tileHeight);
                     tile
                         .clone()
-                        .css('backgroundPosition', (j * -tileWidth) + 'px ' + (i * -tileHeight) + 'px')
+                        .css({
+                            left                : j * tileWidth,
+                            top                 : i * tileHeight,
+                            backgroundPosition  : j * -tileWidth + 'px ' + i * -tileHeight + 'px'
+                        })
                         .appendTo(container);
                 }
-            }            
+            }           
         });
-    };    
+    };
 }(jQuery));
