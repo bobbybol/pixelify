@@ -1,0 +1,26 @@
+body { 
+    margin: 20px; 
+}
+
+img {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.imgWrapper {
+    position: relative;
+}
+
+.bbTile { 
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); 
+}

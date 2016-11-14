@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BB Image to Pixels Demo</title>
+                
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+    </head>
+
+    <body>
+        
+        <div class="imgWrapper">
+            <img src="img/audi-r8.jpg"/>
+        </div>
+
+        <!-- jQuery -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <!-- Plugin -->
+        <script src="js/jquery.bb-pixelify.js"></script>
+
+        <!-- Call -->
+        <script>    
+            $('.imgWrapper').bbPixelify({ 
+                columns : 35, 
+                rows    : 15
+            });
+        </script>
+        
+    </body>
+</html>
