@@ -2,7 +2,7 @@
 Transform any image into a grid of tiles
 
 ## Demo
-Live demonstation at [bobbybol.com](http://bobbybol.com/plugins/bb-pixelify/).
+Live demonstation at [bobbybol.com](http://bobbybol.com/plugins/bb-pixelify/).  
 (Did this too quick, needs optimalization. Best viewed in Chrome to get the correct effect.)
 
 ## Usage
@@ -25,5 +25,5 @@ $('.imgContainer').bbPixelify({
 });
 ```
 
-The original image will be replaced with a `columns * rows` number of blocks.
-You can then proceed to animate these blocks with CSS, GreenSock, or whatever, by referring to their `.bbTile` CSS class. 
+The original image will be replaced with a `columns * rows` number of blocks.  
+You can then proceed to animate these blocks with CSS, GreenSock, or whatever, by referring to their `.bbTile` CSS class.

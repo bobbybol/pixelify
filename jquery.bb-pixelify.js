@@ -48,11 +48,8 @@
             
             var targetWidth     = originalImage.width();
             var targetHeight    = originalImage.height();
-            var numberOfTiles   = settings.columns * settings.rows;
             var tileWidth       = targetWidth / settings.columns;
             var tileHeight      = targetHeight / settings.rows;
-            var tilesArray      = [];
-            var tiles;
             var i;
             var j;
             
