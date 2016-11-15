@@ -3,6 +3,7 @@ Transform any image into a grid of tiles
 
 ## Demo
 Live demonstation at [bobbybol.com](http://bobbybol.com/plugins/bb-pixelify/).
+(Did this too quick, needs optimalization. Best viewed in Chrome to get the correct effect.)
 
 ## Usage
 
