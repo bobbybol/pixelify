@@ -25,5 +25,5 @@ $('.imgContainer').bbPixelify({
 });
 ```
 
-The original image will be replaced with columns * rows amount of blocks.
-You can then proceed to animate these blocks with CSS, GreenSock, or anything, by referring to their `.bbTile` CSS class. 
+The original image will be replaced with a `columns * rows` number of blocks.
+You can then proceed to animate these blocks with CSS, GreenSock, or whatever, by referring to their `.bbTile` CSS class. 
