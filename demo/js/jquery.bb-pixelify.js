@@ -91,28 +91,4 @@
             }           
         });
     };
-    
-    
-    /**
-     * Helper function: Range
-     * Get an array of numbers within a range
-     * @param min {number} Lowest number in array
-     * @param max {number} Highest number in array
-     * @param rand {bool} Shuffle array
-     * @return {array}
-     */
-    function range(min, max, rand) {
-        var arr = (new Array(++max - min))
-            .join('.').split('.')
-            .map(function (v, i) {
-                return min + i;
-            });
-        return rand ? arr.map(function (v) {
-                return [Math.random(), v];
-            })
-            .sort().map(function (v) {
-                return v[1];
-            }) : arr;
-    }
-    
 }(jQuery));

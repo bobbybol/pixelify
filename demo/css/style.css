@@ -17,6 +17,6 @@ img {
 }
 
 .bbTile { 
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9); 
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95); 
 }
