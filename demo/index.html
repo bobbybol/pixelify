@@ -20,14 +20,18 @@
 
         <!-- Plugin -->
         <script src="js/jquery.bb-pixelify.js"></script>
-        <script src="js/jquery.bb-arrayshuffler.js"></script>
+        <script src="js/jquery.bb-matrixshuffler.js"></script>
 
         <!-- Call -->
         <script>    
-            $('.imgWrapper').bbPixelify({ 
-                columns : 3, 
-                rows    : 3
-            });
+            var myShuffledPixelMatrix = $('.imgWrapper')
+                .bbPixelify({columns: 7, rows: 3})
+                .children()
+                .slice(1)
+                //.bbShuffleMatrix({columns: 7, rows: 3, shuffleAlgorithm: "random"})
+            ;
+            
+            console.log(myShuffledPixelMatrix);
         </script>
         
     </body>
