@@ -66,8 +66,8 @@
                 }
             });
                         
-            // Hide the original
-            originalImage.hide();
+            // Remove the original
+            originalImage.remove();
             
             // Set the container to relative if static
             if ( container.css('position') === 'static' ) {
