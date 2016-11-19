@@ -1,7 +1,7 @@
 # BB Pixelify
 Transform any image into a grid of tiles
 
-![Demo of BB Pixelify](https://github.com/bobbybol/pixelify/demo/img/pixelify-example@2x.jpg)
+![Demo of BB Pixelify](https://github.com/bobbybol/pixelify/tree/master/demo/img/pixelify-example@2x.jpg)
 
 ## Demo
 Live demonstation at [bobbybol.com](http://bobbybol.com/plugins/bb-pixelify/).  
