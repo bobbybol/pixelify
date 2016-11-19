@@ -1,5 +1,5 @@
 # BB Pixelify
-Transform any image into a grid of tiles
+Transform any image into a grid of image tiles
 
 ![Demo of BB Pixelify](/demo/img/pixelify-example@2x.jpg)
 
@@ -15,7 +15,7 @@ Live demonstation at [bobbybol.com](http://bobbybol.com/plugins/bb-pixelify/).
 
 ## Usage
 
-**HTML structure**
+**HTML structure**  
 All this plug-in requires is an `<img/>`, and an element like a `<div>` to contain the image.
 When using retina sized images, do not forget to scale the image down to desired size with CSS.
 ```html
@@ -27,7 +27,7 @@ When using retina sized images, do not forget to scale the image down to desired
 // don't forget that this plugin needs jQuery to work
 ```
 
-**Activating Pixelify with JavaScript**
+**Activating Pixelify with JavaScript**  
 Call the plugin with JavaScript, and specify the number of desired rows and columns.
 ```javascript
 $('.imgContainer').bbPixelify({ 
