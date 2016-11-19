@@ -12,7 +12,7 @@
     <body>
         
         <div class="imgWrapper">
-            <img src="img/audi-r8.jpg"/>
+            <img src="img/eagle-speedster@1x.png"/>
         </div>
 
         <!-- jQuery -->
@@ -25,10 +25,10 @@
         <!-- Call -->
         <script>    
             var myShuffledPixelMatrix = $('.imgWrapper')
-                .bbPixelify({columns: 7, rows: 3})
+                .bbPixelify({columns: 7, rows: 4})
                 .children()
                 .slice(1)
-                .bbShuffleMatrix({columns: 7, rows: 3, shuffleAlgorithm: "random"})
+                //.bbShuffleMatrix({columns: 7, rows: 4, shuffleAlgorithm: "random"})
             ;
             
             console.log(myShuffledPixelMatrix);

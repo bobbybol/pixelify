@@ -1,5 +1,7 @@
+/* jshint -W117 */
+
 /*!
- * BB Pixelify 1.0.1
+ * BB Pixelify 1.1.0
  * Transform single images into a grid of tiles.
  * https://github.com/bobbybol/pixelify
  * @license MIT licensed
@@ -21,8 +23,8 @@
          */
 
         var settings = {
-            columns : 10,
-            rows    : 10
+            columns     : 10,
+            rows        : 10
         };        
         // Settings extendable with options
         $.extend(settings, options);
@@ -38,7 +40,7 @@
             var container       = $(this);
             var originalImage   = container.find('img');
             var imageSource     = 'url(' + originalImage.attr('src') + ')';
-            
+                        
             // Set image to block before measuring
             originalImage.css({
                 display:    "block",
@@ -52,7 +54,7 @@
             var tileHeight      = targetHeight / settings.rows;
             var i;
             var j;
-            
+                        
             // Build the tile blueprint
             var tile = jQuery('<div/>', {
                 class: 'bbTile',
@@ -67,9 +69,13 @@
             // Hide the original
             originalImage.hide();
             
+            // Set the container to relative if static
+            if ( container.css('position') === 'static' ) {
+                container.css('position', 'relative');
+            }
+            
             // Set the container to correct width and height
             container.css({
-                position    : "relative",
                 width       : targetWidth,
                 height      : targetHeight
             });
@@ -82,7 +88,8 @@
                         .css({
                             left                : j * tileWidth,
                             top                 : i * tileHeight,
-                            backgroundPosition  : j * -tileWidth + 'px ' + i * -tileHeight + 'px'
+                            backgroundPosition  : j * -tileWidth + 'px ' + i * -tileHeight + 'px',
+                            backgroundSize      : targetWidth + 'px ' +  targetHeight + 'px'
                         })
                         .appendTo(container);
                 }
