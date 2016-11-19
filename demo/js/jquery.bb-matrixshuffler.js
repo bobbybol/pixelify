@@ -80,7 +80,7 @@
             return [Math.random(), element];
         }
         
-        function returnLastValue(array) {
+        function returnLastArrayValue(array) {
             // returns z of [.., x, y, z]
             return array[array.length - 1];
         }
@@ -98,9 +98,9 @@
         // Random
         function randomShuffle(array) {
             return array
-                .map(function(el){ return attachRandomNumber(el); })
+                .map(attachRandomNumber)
                 .sort()
-                .map(function(arr){ return returnLastValue(arr); })
+                .map(returnLastArrayValue)
             ;
         }
         
@@ -278,6 +278,7 @@
         if (settings.shuffleAlgorithm === "center") {
             shuffledArray = insideOutShuffle(pixelArray);
         }
+        
         
         /**
          * The Return Value
