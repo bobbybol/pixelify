@@ -11,10 +11,47 @@
 
     <body>
         
-        <div class="imgWrapper">
-            <img src="img/eagle-speedster@1x.png"/>
-        </div>
+        <header class="main-header">
+            <h1 class="h1">BB Pixelify</h1>
+        </header> 
+        
+        <main>
+            <div class="imgWrapper">
+                <img src="img/eagle-speedster@1x.png"/>
+            </div>
+            
+            <button id="basic" class="demoButton">
+                Pixelify
+            </button>
+                        
+            <div class="explanation-wrapper">
+                <div class="explanation-container">
+                    <h2 class="h2">The Plugin</h2>
+                    <p class="p">BB Pixelify is a plugin developed to help you create specialized image animations. It can cut any image up into any number of tiles, and provides you with plenty of hooks to subsequently animate those tiles.</p>
+                    
+                    <hr>
+                    
+                    <h2 class="h2">Usage</h2>
+                    <p class="p">To start using the Pixelify plugin, simple browse to the <a href="https://github.com/bobbybol/pixelify" target="_blank">Github</a> page, download the plugin, and include it in your project. Instructions on how to use the plugin are provided there as well.</p>
+                    
+                    <h2 class="h2">About the demo</h2>
+                    <p class="p">The 'scale-down' effect is added to visualize the tiles. The plugin itself doesn't add any effect; it simply cuts the image up into tiles and leaves the animation to you.</p>
+                    
+                    <h2 class="h2">More power with BB Matrix Shuffler</h2>
+                    <p class="p">The 'scale-down' effect is added to visualize the tiles. The plugin itself doesn't add any effect; it simply cuts the image up into tiles and leaves the animation to you.</p>
+                    
+                    <h2 class="h2">Fully customizable</h2>
+                    <p class="p">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley salsify.
 
+                    Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard.</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Copyright © 2016 bobbybol.com - A project by Bobby Bol</p>
+        </footer>
+        
         <!-- jQuery -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -24,13 +61,31 @@
 
         <!-- Call -->
         <script>    
-            var myShuffledPixelMatrix = $('.imgWrapper')
+            $("#basic").click(function() {
+                $('.imgWrapper')
+                    .bbPixelify({
+                        columns: 7, 
+                        rows: 4
+                    })
+                    .children()
+                    .css('transition', 'all .3s ease-out')
+                ;
+                
+                setTimeout(function() {
+                    $('.imgWrapper')
+                        .children()
+                        .css('transform', 'scale(0.95)')
+                    ;
+                }, 10);
+            });
+
+            /*var myShuffledPixelMatrix = $('.imgWrapper')
                 .bbPixelify({columns: 7, rows: 4})
                 .children()
                 //.bbShuffleMatrix({columns: 7, rows: 4, shuffleAlgorithm: "random"})
-            ;
+            ;*/
             
-            console.log(myShuffledPixelMatrix);
+            //console.log(myShuffledPixelMatrix);
         </script>
         
     </body>

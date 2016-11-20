@@ -1,5 +1,3 @@
-/* jshint -W117 */
-
 /*!
  * BB Pixelify 1.1.0
  * Transform single images into a grid of tiles.
@@ -38,6 +36,11 @@
             
             // Variables
             var container       = $(this);
+            
+            if (!container.find('img').length){
+                return;
+            }
+            
             var originalImage   = container.find('img');
             var imageSource     = 'url(' + originalImage.attr('src') + ')';
                         
@@ -66,20 +69,22 @@
                 }
             });
                         
-            // Hide the original
-            originalImage.hide();
-            
+            // Remove the original
+            originalImage.remove();
+                        
             // Set the container to relative if static
             if ( container.css('position') === 'static' ) {
                 container.css('position', 'relative');
             }
             
             // Set the container to correct width and height
-            container.css({
-                width       : targetWidth,
-                height      : targetHeight
-            });
-            
+            if (!settings.reponsive) {
+                container.css({
+                    width       : targetWidth,
+                    height      : targetHeight
+                });
+            }
+                        
             // Build grid of tiles
             for (i = 0; i < settings.rows; i++) {
                 for (j = 0; j < settings.columns; j++) {
@@ -89,11 +94,16 @@
                             left                : j * tileWidth,
                             top                 : i * tileHeight,
                             backgroundPosition  : j * -tileWidth + 'px ' + i * -tileHeight + 'px',
-                            backgroundSize      : targetWidth + 'px ' +  targetHeight + 'px'
+                            backgroundSize      : targetWidth + 'px ' +  targetHeight + 'px',
+                            backgroundRepeat    : 'no-repeat'
                         })
                         .appendTo(container);
                 }
-            }           
+            }
+            
+            // Add 'pixelified' class to container for animation hook
+            container.addClass('pixelified');
+            
         });
     };
 }(jQuery));
