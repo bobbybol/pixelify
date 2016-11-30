@@ -71,22 +71,22 @@ var tilesToAnimate = $('.imgContainer')
 // shuffled in the order you specified in the plugin options.
 ```
 
-## Changelog
-### 1.1.1
-### Added
-- passing along some info with $.data(), for use by other plugins
-#### Changed
+## Changelog  
+### 1.1.1  
+### Added  
+- passing along some info with $.data(), for use by other plugins  
+#### Changed  
 - relative CSS position only added when container is static
 - original image is removed to not show up as child
 
-### 1.1.0
-#### Added
-- retina images now supported
-#### Changed
+### 1.1.0  
+#### Added  
+- retina images now supported  
+#### Changed  
 - improved performance by building new `<div>` outside of loop
 - improved performance by limiting DOM lookups
 - tiles are now positioned absolutely
 
-### 1.0.0
-#### Added
-- New repository with optimized plugin
+### 1.0.0  
+#### Added  
+- New repository with optimized plugin  
