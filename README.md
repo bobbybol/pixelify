@@ -1,4 +1,4 @@
-# BB Pixelify
+# BB Pixelify - v1.1.1
 Transform any image into a grid of image tiles
 
 ![Demo of BB Pixelify](/demo/img/pixelify-example@2x.jpg)
@@ -70,3 +70,23 @@ var tilesToAnimate = $('.imgContainer')
 // tilesToAnimate is the variable that you can refer to when animating the tiles, 
 // shuffled in the order you specified in the plugin options.
 ```
+
+## Changelog
+### 1.1.1
+### Added
+- passing along some info with $.data(), for use by other plugins
+#### Changed
+- relative CSS position only added when container is static
+- original image is removed to not show up as child
+
+### 1.1.0
+#### Added
+- retina images now supported
+#### Changed
+- improved performance by building new `<div>` outside of loop
+- improved performance by limiting DOM lookups
+- tiles are now positioned absolutely
+
+### 1.0.0
+#### Added
+- New repository with optimized plugin
