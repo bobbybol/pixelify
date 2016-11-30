@@ -75,6 +75,7 @@ var tilesToAnimate = $('.imgContainer')
 ### 1.1.1  
 ### Added  
 - passing along some info with $.data(), for use by other plugins  
+
 #### Changed  
 - relative CSS position only added when container is static
 - original image is removed to not show up as child
@@ -82,6 +83,7 @@ var tilesToAnimate = $('.imgContainer')
 ### 1.1.0  
 #### Added  
 - retina images now supported  
+
 #### Changed  
 - improved performance by building new `<div>` outside of loop
 - improved performance by limiting DOM lookups
