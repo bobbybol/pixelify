@@ -1,5 +1,5 @@
 /*!
- * BB Pixelify 1.1.0
+ * BB Pixelify 1.1.1
  * Transform single images into a grid of tiles.
  * https://github.com/bobbybol/pixelify
  * @license MIT licensed
@@ -22,7 +22,8 @@
 
         var settings = {
             columns     : 10,
-            rows        : 10
+            rows        : 10,
+            responsive  : false     // this is work in progress for v1.2.0
         };        
         // Settings extendable with options
         $.extend(settings, options);
@@ -84,7 +85,17 @@
                     height      : targetHeight
                 });
             }
-                        
+            
+            // #TODO v1.1.5 refactor functionally
+            // and test performance
+            
+            // #TODO v1.2.0 add debounced resize listener
+            // and re-build grid when responsive set to true
+            
+            // #TODO v1.3.0 remove subpixel values
+            // by alternatively rounding the pixel values
+            // up on even tiles and down on uneven tiles
+            
             // Build grid of tiles
             for (i = 0; i < settings.rows; i++) {
                 for (j = 0; j < settings.columns; j++) {
@@ -103,6 +114,12 @@
             
             // Add 'pixelified' class to container for animation hook
             container.addClass('pixelified');
+            
+            // Add some useful data to jQuery object
+            container.data("bbMatrixInfo", {
+                rows    : settings.rows,
+                columns : settings.columns
+            });
             
         });
     };
