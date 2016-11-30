@@ -10,7 +10,7 @@ Live demonstation at [bobbybol.com/plugins/bb-pixelify](http://bobbybol.com/plug
 - You only need to specify the number of rows and columns; Pixelify does the rest.
 - Support for retina sized images.
 - Easily animate the tiles with CSS or an animation library such as [GreenSock](https://greensock.com/).
-- For real cool animations, use Pixelify in combination with the BB Matrix Shuffler plugin.
+- For real cool animations, use Pixelify in combination with the [BB Matrix Shuffler](https://github.com/bobbybol/matrix-shuffler) plugin.
 
 ## Usage
 
@@ -56,3 +56,17 @@ This ensures that the plugin has finished creating all the tiles, and that they 
 ## Known Issues
 **Divide into whole pixels**  
 It is **strongly advised** to divide up your image in such a way that the individual tiles are made up of _whole pixel values_. For example, if the original image is 700x400 pixels large, choosing 7 rows and 4 columns would result in images 100x100px large, which is great. If you were to choose 8 rows and 5 columns, the tiles would be 87.5x80 pixels large, which is not so great because the tiles are 87.5px wide while we should aim for whole pixels. Pixel values with decimal points cause incorrect rendering in some browsers, as well as some performance issues.
+
+## Use Matrix Shuffler for advanced animations
+The Pixelify plugin cuts images up into a grid of smaller images. If you want more control over the order in which you can animate the individual grid tiles, use [BB Matrix Shuffler](https://github.com/bobbybol/matrix-shuffler). Simply call it chained to the `.bbPixelify()` method:
+```javascript
+var tilesToAnimate = $('.imgContainer')
+  .bbPixelify({columns: 35, rows: 15})        // use plugin,
+  .bbShuffleMatrix({                          // shuffle the tiles,
+    shuffleAlgorithm: "diagonal",             // specify which shuffle algorithm to use ,
+    shuffleDirection: "topleft->bottomright"  // and what direction the tiles should run.
+  })
+;
+// tilesToAnimate is the variable that you can refer to when animating the tiles, 
+// shuffled in the order you specified in the plugin options.
+```
