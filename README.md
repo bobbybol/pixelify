@@ -73,7 +73,7 @@ var tilesToAnimate = $('.imgContainer')
 
 ## Changelog  
 ### 1.1.1  
-### Added  
+#### Added  
 - passing along some info with $.data(), for use by other plugins  
 
 #### Changed  
